@@ -13,7 +13,7 @@ import MyHeader from '$src/components/MyHeader.vue'
       Home
     </a>
 
-    <a href="/about">
+    <a href="about">
       About
     </a>
   </nav>
