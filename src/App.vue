@@ -6,16 +6,19 @@ import MyHeader from '$src/components/MyHeader.vue'
   <MyHeader :example="{ value: 'Hello Vite + Vue.js + tailwindUI static SPA' }" />
 
   <nav class="p-4">
-    <a
+    <router-link
       class="mr-4"
-      href="/"
+      to="/"
     >
       Home
-    </a>
-
-    <a href="about">
+    </router-link>
+    
+    <router-link
+      class="mr-4"
+      to="/about"
+    >
       About
-    </a>
+    </router-link>
   </nav>
 
   <router-view />
