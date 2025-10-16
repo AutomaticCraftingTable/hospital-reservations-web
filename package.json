@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "lint": "eslint .",
-    "lintf": "eslint . --fix"
+  "dev": "vite",
+  "build": "vue-tsc --noEmit && vite build",
+  "preview": "vite preview",
+  "lint": "eslint .",
+  "lintf": "eslint . --fix"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
