@@ -6,7 +6,6 @@
   const router = useRouter();
   const { registerPatient } = useAuth();
   
-  // поля формы
   const name = ref("");
   const surname = ref("");
   const email = ref("");
@@ -30,8 +29,6 @@
   };
   </script>
   
-  
-
 <template>
   <div class="min-h-screen bg-[#f5f7fb] flex flex-col">
 
@@ -53,8 +50,7 @@
         >
           Zaloguj się
         </RouterLink>
-    
-        <!-- 🔵 Nowa opcja — Rejestracja lekarza -->
+  
         <RouterLink
           to="/register-doctor"
           class="text-[#0f6bff] hover:text-[#0057e6] font-medium transition"

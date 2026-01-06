@@ -6,7 +6,6 @@
   const router = useRouter()
   const { registerDoctor } = useAuth();
   
-  // 🔹 список специализаций (единый источник правды)
   const specializations = [
     "Lekarz rodzinny",
     "Pediatra",
@@ -24,7 +23,6 @@
     "Psychiatra",
   ]
   
-  // поля формы
   const name = ref("")
   const surname = ref("")
   const email = ref("")
@@ -56,7 +54,6 @@
   <template>
     <div class="min-h-screen bg-[#f5f7fb] flex flex-col">
   
-      <!-- HEADER -->
       <header class="flex items-center justify-between px-10 py-6">
         <RouterLink to="/" class="w-10 h-10">
           <img
@@ -83,11 +80,9 @@
         </nav>
       </header>
   
-      <!-- MAIN -->
       <main class="flex-1 flex items-center justify-center">
         <div class="bg-white rounded-3xl shadow-lg px-14 py-12 max-w-lg w-full">
   
-          <!-- Logo -->
           <div class="flex items-center gap-4 mb-8">
             <img
               src="/src/assets/lekmed-logo.png"
@@ -106,7 +101,6 @@
             </div>
           </div>
   
-          <!-- FORM -->
           <form class="space-y-4">
   
             <div class="flex gap-3">
@@ -131,7 +125,6 @@
               class="w-full rounded-full bg-[#f6f8ff] border border-[#edf1ff] px-5 py-3"
             />
   
-            <!-- 🔥 SELECT вместо input -->
             <select
               v-model="profession"
               class="w-full rounded-full bg-[#f6f8ff] border border-[#edf1ff] px-5 py-3 text-[#1f2933]"

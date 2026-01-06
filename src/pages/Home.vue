@@ -6,15 +6,11 @@ import AppFooter from "$src/components/AppFooter.vue"
 
 <template>
   <div class="min-h-screen bg-[#f5f7fb] flex flex-col">
-
-    <!-- HEADER -->
     <AppHeader />
 
-    <!-- MAIN -->
     <main class="flex-1">
       <div class="w-full px-10 py-10">
 
-        <!-- HERO -->
         <section
           class="rounded-3xl border border-[#c3d4ff] bg-gradient-to-r from-[#2563eb] to-[#4f46e5] text-white p-10 mb-10 relative overflow-hidden"
         >
@@ -43,10 +39,8 @@ import AppFooter from "$src/components/AppFooter.vue"
           </div>
         </section>
 
-        <!-- GRID KART USŁUG -->
         <section class="grid md:grid-cols-3 gap-6 text-[#111827]">
 
-          <!-- Pediatria -->
           <div class="bg-white rounded-2xl border border-[#e5edff] p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">Pediatria</h3>
             <p class="text-sm text-[#6b7280] mb-4 leading-relaxed">
@@ -60,7 +54,6 @@ import AppFooter from "$src/components/AppFooter.vue"
             </RouterLink>
           </div>
 
-          <!-- Kardiologia -->
           <div class="bg-white rounded-2xl border border-[#e5edff] p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">Kardiologia</h3>
             <p class="text-sm text-[#6b7280] mb-4 leading-relaxed">
@@ -74,7 +67,6 @@ import AppFooter from "$src/components/AppFooter.vue"
             </RouterLink>
           </div>
 
-          <!-- Ginekologia -->
           <div class="bg-white rounded-2xl border border-[#e5edff] p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">Ginekologia</h3>
             <p class="text-sm text-[#6b7280] mb-4 leading-relaxed">
@@ -88,7 +80,6 @@ import AppFooter from "$src/components/AppFooter.vue"
             </RouterLink>
           </div>
 
-          <!-- Dermatologia -->
           <div class="bg-white rounded-2xl border border-[#e5edff] p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">Dermatologia</h3>
             <p class="text-sm text-[#6b7280] mb-4 leading-relaxed">
@@ -102,7 +93,6 @@ import AppFooter from "$src/components/AppFooter.vue"
             </RouterLink>
           </div>
 
-          <!-- Neurologia -->
           <div class="bg-white rounded-2xl border border-[#e5edff] p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">Neurologia</h3>
             <p class="text-sm text-[#6b7280] mb-4 leading-relaxed">
@@ -116,7 +106,6 @@ import AppFooter from "$src/components/AppFooter.vue"
             </RouterLink>
           </div>
 
-          <!-- Ortopedia -->
           <div class="bg-white rounded-2xl border border-[#e5edff] p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">Ortopedia</h3>
             <p class="text-sm text-[#6b7280] mb-4 leading-relaxed">
@@ -135,7 +124,6 @@ import AppFooter from "$src/components/AppFooter.vue"
       </div>
     </main>
 
-    <!-- FOOTER -->
     <AppFooter />
   </div>
 </template>

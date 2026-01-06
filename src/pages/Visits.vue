@@ -5,7 +5,6 @@
   import AppFooter from "$src/components/AppFooter.vue"
   import { useAppointments } from "$src/components/useAppointments"
   
-  // ===== TYPES =====
   type Appointment = {
     id: number
     date: string
@@ -22,7 +21,6 @@
     }
   }
   
-  // ===== COMPOSABLE =====
   const {
     appointments,
     fetchMine,
@@ -32,7 +30,6 @@
     removingId,
   } = useAppointments()
   
-  // ===== SORT =====
   type SortMode = "upcoming" | "newest" | "oldest"
   const sortMode = ref<SortMode>("upcoming")
   
@@ -59,8 +56,6 @@
       `${a.date}T${a.time}`.localeCompare(`${b.date}T${b.time}`)
     )
   })
-  
-  // ===== HELPERS =====
   const formatDate = (iso: string) => {
     const [y, m, d] = iso.split("-")
     return `${d}.${m}.${y}`
@@ -80,7 +75,6 @@
   
       <main class="flex-1">
         <div class="w-full px-10 py-6 max-w-3xl mx-auto">
-          <!-- HEADER -->
           <div class="flex items-center justify-between mb-4">
             <h1 class="text-lg font-semibold text-[#111827]">
               {{ role === "doctor" ? "Twoi pacjenci" : "Twoje wizyty" }}
@@ -96,7 +90,6 @@
             </select>
           </div>
   
-          <!-- LIST -->
           <div class="flex flex-col gap-3">
             <div
               v-if="!loading && sortedAppointments.length === 0"
@@ -111,7 +104,6 @@
               class="bg-white border border-[#cdd9ff] rounded-2xl px-6 py-4 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow"
             >
               <div class="flex items-center justify-between gap-4">
-                <!-- NAME -->
                 <div class="text-left">
                   <p class="text-base font-semibold text-[#111827]">
                   {{ visit.displayName }}
@@ -126,8 +118,6 @@
 
                 </div>
 
-  
-                <!-- DATE / TIME -->
                 <div class="flex flex-col items-end text-xs text-[#111827]">
                   <span class="px-3 py-1 rounded-full bg-[#e0ebff] font-medium">
                     {{ formatDate(visit.date) }}
@@ -137,8 +127,7 @@
                   </span>
                 </div>
               </div>
-  
-              <!-- CANCEL (FOR BOTH ROLES) -->
+
               <div class="flex justify-end mt-2">
                 <button
                   @click="confirmDelete(visit.id)"

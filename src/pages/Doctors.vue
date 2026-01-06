@@ -12,10 +12,8 @@
 
   const { clientId, fetchMine } = useAppointments()
 
-  // ===== AUTH =====
   const { user } = useAuth()
   
-  // ===== TYPES =====
   type Doctor = {
     id: number
     specialization: string
@@ -33,8 +31,7 @@
     isCurrentMonth: boolean
     iso: string
   }
-  
-  // ===== SPECIALIZATIONS =====
+
   const specializations = [
     "Lekarz rodzinny",
     "Pediatra",
@@ -52,7 +49,6 @@
     "Psychiatra",
   ]
   
-  // ===== ROUTE + FILTER =====
   const route = useRoute()
   
   const initialSpec = (() => {
@@ -63,7 +59,6 @@
   
   const selectedSpec = ref(initialSpec)
   
-  // ===== DOCTORS =====
   const doctors = ref<Doctor[]>([])
   const loadingDoctors = ref(false)
   
@@ -87,7 +82,6 @@
     selectedSpec.value = spec
   }
   
-  // ===== BOOKING =====
   const selectedDoctor = ref<Doctor | null>(null)
   const selectedDate = ref("")
   const selectedTime = ref("")
@@ -112,7 +106,6 @@
     selectedDoctor.value = null
   }
   
-  // ===== CREATE APPOINTMENT (FIXED) =====
   const confirmBooking = async () => {
   if (
     !selectedDoctor.value ||
@@ -121,8 +114,7 @@
   ) {
     return
   }
-
-  // 🔥 если clientId ещё не загружен — подгружаем
+  
   if (!clientId.value) {
     await fetchMine()
   }
@@ -148,7 +140,7 @@
   try {
     await createAppointmentApi({
       doctor_id: selectedDoctor.value.id,
-      client_id: clientId.value, // ✅ clients.id
+      client_id: clientId.value, 
       starting_at,
       ending_at,
     })
@@ -162,7 +154,6 @@
 }
 
   
-  // ===== CALENDAR =====
   const monthNames = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -267,7 +258,6 @@
   
       <AppFooter />
   
-      <!-- MODAL -->
       <div
         v-if="selectedDoctor"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
@@ -279,7 +269,6 @@
             {{ selectedDoctor.specialization }}
           </p>
   
-          <!-- КАЛЕНДАРЬ -->
           <div class="mb-4">
             <div class="flex justify-between mb-2">
               <button @click="goPrevMonth">‹</button>
@@ -300,7 +289,6 @@
             </div>
           </div>
   
-          <!-- ВРЕМЯ -->
           <div class="grid grid-cols-3 gap-2 mb-4">
             <button
               v-for="t in availableTimes"

@@ -16,7 +16,7 @@ const linkClasses = (path: string) => {
 
 const handleLogout = () => {
   logout()
-  router.push("/") // можно на /login, если хочешь
+  router.push("/")
 }
 </script>
 
@@ -59,7 +59,6 @@ const handleLogout = () => {
             <span>Nasi lekarze</span>
           </RouterLink>
 
-          <!-- Видно только врачу -->
           <RouterLink
             v-if="!isDoctor"
             to="/visits"
@@ -69,7 +68,6 @@ const handleLogout = () => {
             <span>Twoje wizyty</span>
           </RouterLink>
 
-          <!-- Wizyty pacjentów — ТОЛЬКО для доктора -->
           <RouterLink
             v-if="isDoctor"
             to="/doctor-visits"
@@ -98,7 +96,6 @@ const handleLogout = () => {
           </div>
         </div>
 
-        <!-- Кнопка Wyloguj się только если пользователь "есть" -->
         <button
         v-if="isLoggedIn"
         type="button"

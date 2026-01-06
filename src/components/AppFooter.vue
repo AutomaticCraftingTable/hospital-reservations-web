@@ -9,7 +9,6 @@
     <footer class="bg-[#021b3a] text-white text-xs mt-12">
       <div class="w-full px-10 py-8 grid md:grid-cols-4 gap-10">
   
-        <!-- LOGO -->
         <div class="flex flex-col gap-3">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
@@ -27,7 +26,6 @@
           </p>
         </div>
   
-        <!-- QUICK LINKS -->
         <div>
           <h4 class="text-base font-semibold mb-3">Szybkie linki</h4>
           <ul class="space-y-2 text-sm text-[#d1d5db]">
@@ -37,14 +35,12 @@
               </RouterLink>
             </li>
   
-            <!-- ❌ НЕ показываем доктору -->
             <li v-if="!isDoctor">
               <RouterLink to="/doctors" class="hover:text-white transition">
                 Nasi lekarze
               </RouterLink>
             </li>
   
-            <!-- ❌ НЕ показываем доктору -->
             <li v-if="!isDoctor">
               <RouterLink to="/services" class="hover:text-white transition">
                 Usługi
@@ -53,7 +49,6 @@
           </ul>
         </div>
   
-        <!-- SERVICES (ONLY PATIENT) -->
         <div v-if="!isDoctor">
           <h4 class="text-base font-semibold mb-3">Usługi</h4>
           <ul class="space-y-2 text-sm text-[#d1d5db]">

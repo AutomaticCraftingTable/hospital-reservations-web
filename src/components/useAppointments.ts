@@ -4,34 +4,27 @@ import {
   deleteAppointmentApi,
 } from "$src/api/appointments.service"
 
-// ===== TYPES =====
 export type UiAppointment = {
   id: number
   date: string
   time: string
   created_at: string
 
-  // 🔥 унифицированное имя для отображения
   displayName: string
 
-  // только если есть (для пациента)
   specialization?: string
 }
 
-// ===== STATE =====
 const appointments = ref<UiAppointment[]>([])
 const loading = ref(false)
 
-// ❗ НЕ ТРОГАЕМ
 const clientId = ref<number | null>(null)
 
-// UX
 const removingId = ref<number | null>(null)
 
 export function useAppointments() {
   const role = ref<"client" | "doctor" | null>(null)
 
-  // ===== FETCH =====
   const fetchMine = async () => {
     loading.value = true
     try {
@@ -39,7 +32,6 @@ export function useAppointments() {
 
       console.log("RAW RESPONSE:", res.data)
 
-      // ❗ НЕ ТРОГАЕМ
       clientId.value =
         typeof res.data?.client_id === "number"
           ? res.data.client_id
@@ -78,8 +70,6 @@ export function useAppointments() {
       loading.value = false
     }
   }
-
-  // ===== DELETE =====
   const remove = async (id: number) => {
     if (removingId.value === id) return
     removingId.value = id
@@ -99,7 +89,7 @@ export function useAppointments() {
   return {
     appointments,
     loading,
-    clientId,   // ✅ ОСТАВИЛИ
+    clientId,
     removingId,
     role,
     fetchMine,

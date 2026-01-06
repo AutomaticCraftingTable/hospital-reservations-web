@@ -1,4 +1,4 @@
-// src/api/auth.service.ts
+
 import api from "./axios";
 
 export const loginApi = async (data: {
