@@ -18,5 +18,5 @@
       "$src/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "src/api/axios.ts", "src/components/useAuth.ts", "src/api/auth.service.ts"]
 }

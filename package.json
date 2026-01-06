@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vue-tsc --noEmit && vite build",
-  "preview": "vite preview",
-  "lint": "eslint .",
-  "lintf": "eslint . --fix"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lintf": "eslint . --fix"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
+    "axios": "^1.13.2",
     "tailwindcss": "^4.1.14",
     "vue": "^3.5.22",
     "vue-router": "^4.6.0"
